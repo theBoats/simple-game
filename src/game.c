@@ -1,0 +1,25 @@
+#include "game.h"
+#include "raylib.h"
+#include "field.h"
+
+void InitGame(Game* game) {
+
+	// Initialize the field
+	game->field = (Rectangle){50, 50, FIELD_WIDTH, FIELD_HEIGHT}; // xpos: top left corner, ypos: top lefet corner, width, height
+}
+
+
+// Draw the game
+void DrawGame(const Game* game) {
+	BeginDrawing();
+	ClearBackground(DARKGREEN);
+
+	// Draw field
+    DrawField(game->field);
+    DrawGoalLines(game->field);
+    DrawCenterLine(game->field);
+	DrawTryZones(game->field);
+	DrawFortyTwenties(game->field);
+
+	EndDrawing();
+}
