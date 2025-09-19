@@ -2,6 +2,7 @@
 #define GAME_H
 
 #include "raylib.h"
+#include "ball.h"
 
 #define SCREEN_WIDTH 800
 #define SCREEN_HEIGHT 600
@@ -11,6 +12,7 @@
 typedef struct {
 
 	Rectangle field;
+	Ball ball;
 
 } Game;
 

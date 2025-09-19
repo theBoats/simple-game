@@ -1,11 +1,15 @@
 #include "game.h"
 #include "raylib.h"
 #include "field.h"
+#include "ball.h"
 
 void InitGame(Game* game) {
 
 	// Initialize the field
 	game->field = (Rectangle){50, 50, FIELD_WIDTH, FIELD_HEIGHT}; // xpos: top left corner, ypos: top lefet corner, width, height
+
+	// Initialize the ball
+	InitializeBall(&game->ball);
 }
 
 
@@ -20,6 +24,10 @@ void DrawGame(const Game* game) {
     DrawCenterLine(game->field);
 	DrawTryZones(game->field);
 	DrawFortyTwenties(game->field);
+
+	// Draw ball
+	DrawBall(&game->ball);
+
 
 	EndDrawing();
 }
