@@ -20,6 +20,8 @@ typedef struct Game Game;
 // Function prototypes
 int random_player_position(int min, int max);
 void InitializePlayers(Player* players);
+// void UpdatePlayerPositions(Player* players, float deltaTime, Rectangle field);
+void UpdatePlayerPositions(Player* players, float deltaTime);
 void DrawPlayer(const Player* player, int playerIndex);
 void DrawAllPlayers(const Player* players);
 

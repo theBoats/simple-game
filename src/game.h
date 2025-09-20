@@ -14,11 +14,16 @@ typedef struct Game {
 	Player players[TOTAL_PLAYERS];
 	Rectangle field;
 	Ball ball;
+
+	// Game state variables
+    float stateTimer;
+
 } Game;
 
 
 // Function prototypes
 void InitGame(Game* game);
 void DrawGame(const Game* game);
+void UpdateGame(Game* game, float deltaTime);
 
 #endif

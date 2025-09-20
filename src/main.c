@@ -21,6 +21,7 @@ int main(void) {
 		float deltaTime = GetFrameTime();
 
 		// Update
+		UpdateGame(&game, deltaTime);
 
 		// Draw
 		DrawGame(&game);

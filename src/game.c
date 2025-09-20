@@ -3,6 +3,7 @@
 #include "field.h"
 #include "ball.h"
 #include "player.h"
+#include "ai.h"
 
 void InitGame(Game* game) {
 
@@ -14,6 +15,15 @@ void InitGame(Game* game) {
 
 	// Initialize the ball
 	InitializeBall(&game->ball);
+}
+
+
+// TEMP!!
+void UpdateGame(Game* game, float deltaTime) {
+	game->stateTimer += deltaTime;
+
+	UpdateLooseBallChase(game->players, &game->ball);
+	UpdatePlayerPositions(game->players, deltaTime);
 }
 
 

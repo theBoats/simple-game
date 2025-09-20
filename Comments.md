@@ -49,3 +49,18 @@ typedef struct Game {
 
 } Game;
 
+
+# PLAN
+
+- implement update player positions in player.c Players should seek the ball (already implemented)
+
+
+- pick up ball
+- while ball carrier -1; move to ball
+
+
+
+- defender logic
+	- move up slowly as a line
+	- within radius of ball carrier increase speed
+
