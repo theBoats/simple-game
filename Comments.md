@@ -36,6 +36,8 @@ game->players is an **array**. **In C when you pass an array to a function it au
 ### Players
 The players array is defined in the struct Game. It is an array of struct Player.
 
+Ball posession is defined in ball.c
+
 ### Structs
 Learned that structs can be named or anonymous. e.g.
 
@@ -52,8 +54,10 @@ typedef struct Game {
 
 # PLAN
 
-- implement update player positions in player.c Players should seek the ball (already implemented)
+- implement HUD for troubleshooting; put ball carrier somewhere
 
+- implement ball carrier, will need game state now for when ball is loose or in play, can add more states as game progresses
+- confusion between ball.c and ai.c - where should the posession be assigned, ballCarrier should be in game, it's an int which corresponds to players array
 
 - pick up ball
 - while ball carrier -1; move to ball

@@ -7,7 +7,7 @@
 #define PLAYERS_PER_TEAM 5
 #define TOTAL_PLAYERS (PLAYERS_PER_TEAM * 2)
 
-typedef struct {
+typedef struct Player {
 	Vector2 position;
     Vector2 velocity;
     Color color;

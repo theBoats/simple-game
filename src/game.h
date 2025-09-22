@@ -10,10 +10,17 @@
 #define FIELD_WIDTH 700
 #define FIELD_HEIGHT 500
 
+// typedef enum GameState {
+
+// 	NORMAL_PLAY // game in progress
+
+// } GameState;
+
 typedef struct Game {
 	Player players[TOTAL_PLAYERS];
 	Rectangle field;
 	Ball ball;
+	int ballCarrier;
 
 	// Game state variables
     float stateTimer;

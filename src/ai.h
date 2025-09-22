@@ -6,7 +6,12 @@
 #include "player.h"
 #include "ball.h"
 
+// Forward declarations
+typedef struct Game Game;
+
 // Function prototypes
-void UpdateLooseBallChase(Player* players, Ball* ball);
+void UpdateLooseBallChase(Player* players, Game* game, Ball* ball);
+// void UpdateBallCarrier(Player* players, int ballCarrier, Rectangle field, Ball* ball, int* gameState, float deltaTime);
+
 
 #endif

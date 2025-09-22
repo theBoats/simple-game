@@ -9,7 +9,7 @@ REM Create bin directory if it doesn't exist
 if not exist "bin" mkdir bin
 
 echo Compiling...
-"C:\raylib\w64devkit\bin\gcc.exe" -o bin\simple-game.exe src\main.c  src\game.c  src\field.c src\ball.c src\player.c src\ai.c ^
+"C:\raylib\w64devkit\bin\gcc.exe" -o bin\simple-game.exe src\main.c  src\game.c  src\field.c src\ball.c src\player.c src\ai.c src\hud.c ^
     -I"C:\raylib\w64devkit\include" ^
     -I"C:\raylib\raylib\src" ^
     -L"C:\raylib\w64devkit\lib" ^
