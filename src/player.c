@@ -18,12 +18,12 @@ void InitializePlayers(Player* players) {
 
 	// Team 1 (White) - left side
 	for (int i = 0; i < PLAYERS_PER_TEAM; i++) {
-		 players[i] = (Player){{random_player_position(50, 50+(FIELD_WIDTH/2)-5),random_player_position(50+5, 50+FIELD_HEIGHT)-5}, {0, 0}, WHITE};
+		 players[i] = (Player){{random_player_position(50, 50+(FIELD_WIDTH/2)-5),random_player_position(50+5, 50+FIELD_HEIGHT)-5}, {0, 0}, WHITE, 0};
 	}
 
 	// Team 2 (Grey) - right side
 	for (int i = 0; i < PLAYERS_PER_TEAM; i++) {
-		 players[i+PLAYERS_PER_TEAM] = (Player){{random_player_position(50+(FIELD_WIDTH/2)+5, FIELD_WIDTH),random_player_position(50+5, 50+FIELD_HEIGHT-5)}, {0, 0}, GRAY};
+		 players[i+PLAYERS_PER_TEAM] = (Player){{random_player_position(50+(FIELD_WIDTH/2)+5, FIELD_WIDTH),random_player_position(50+5, 50+FIELD_HEIGHT-5)}, {0, 0}, GRAY, 1};
 	}
 }
 

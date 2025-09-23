@@ -11,7 +11,8 @@ typedef struct Game Game;
 
 // Function prototypes
 void UpdateLooseBallChase(Player* players, Game* game, Ball* ball);
-// void UpdateBallCarrier(Player* players, int ballCarrier, Rectangle field, Ball* ball, int* gameState, float deltaTime);
+void UpdateBallCarrier(Player* players, int ballCarrier, Rectangle field);
+
 
 
 #endif

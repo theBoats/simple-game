@@ -2,8 +2,9 @@
 #include "hud.h"
 #include "player.h"
 
-void DrawHUD(int ballCarrier, const Player* players) {
+void DrawHUD(int ballCarrier, const Player* players, int team1score, int team2score) {
 	DrawPlayerInfo(ballCarrier, players);
+	DrawScore(team1score, team2score);
 }
 
 
@@ -15,4 +16,9 @@ void DrawPlayerInfo(int ballCarrier, const Player* players) {
     } else {
     	DrawText(TextFormat("Ball is loose"), 10, 30, 20, LIGHTGRAY);
     }
+}
+
+// Draw current score
+void DrawScore(int team1Score, int team2Score) {
+    DrawText(TextFormat("Score: %d - %d", team1Score, team2Score), 300, 35, 16, YELLOW);
 }

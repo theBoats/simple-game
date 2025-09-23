@@ -33,6 +33,8 @@ Calls:
 Answer, game->ball is a struct not a pointer (-> dereferences a pointer). In this case the function wants a pointer as argument so we pass the address of ball with &game->ball.
 game->players is an **array**. **In C when you pass an array to a function it automatically decays to a pointer to the first element in the array** (&game->players[0]). The function InitializePlayers wants a pointer as an argument so passing in the array already gives it a pointer. Therefore you do not need &. 
 
+For some functions you can pass elements of the game struct by value. For instance ballCarrier in an int. If a function just needs to read the value you can pass game->ballCarrier (value) instead of &game->ballCarrier (pointer to ballCarrier).
+
 ### Players
 The players array is defined in the struct Game. It is an array of struct Player.
 
@@ -54,14 +56,10 @@ typedef struct Game {
 
 # PLAN
 
-- implement HUD for troubleshooting; put ball carrier somewhere
 
-- implement ball carrier, will need game state now for when ball is loose or in play, can add more states as game progresses
-- confusion between ball.c and ai.c - where should the posession be assigned, ballCarrier should be in game, it's an int which corresponds to players array
 
-- pick up ball
-- while ball carrier -1; move to ball
 
+- normal play function
 
 
 - defender logic

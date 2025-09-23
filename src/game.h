@@ -10,17 +10,20 @@
 #define FIELD_WIDTH 700
 #define FIELD_HEIGHT 500
 
-// typedef enum GameState {
+typedef enum GameState {
 
-// 	NORMAL_PLAY // game in progress
+	NORMAL_PLAY, // game in progress
+	LOOSE_BALL // implement ball chase logic
 
-// } GameState;
+} GameState;
 
 typedef struct Game {
 	Player players[TOTAL_PLAYERS];
 	Rectangle field;
 	Ball ball;
 	int ballCarrier;
+	int team1score;
+	int team2score;
 
 	// Game state variables
     float stateTimer;
@@ -32,5 +35,6 @@ typedef struct Game {
 void InitGame(Game* game);
 void DrawGame(const Game* game);
 void UpdateGame(Game* game, float deltaTime);
+static void UpdateNormalPlay(Game* game, float deltaTime);
 
 #endif

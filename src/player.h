@@ -11,6 +11,7 @@ typedef struct Player {
 	Vector2 position;
     Vector2 velocity;
     Color color;
+    int team;
 
 } Player;
 

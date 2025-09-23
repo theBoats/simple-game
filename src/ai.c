@@ -29,9 +29,27 @@ void UpdateLooseBallChase(Player* players, Game* game, Ball* ball) {
 	} 
 }
 
-// void UpdateBallCarrier(Player* players, int ballCarrier, Rectangle field, Ball* ball, int* gameState, float deltaTime) {
-// 	if (ballCarrier < 0) return; // if ball is loose ballCarrier = -1
+void UpdateBallCarrier(Player* players, int ballCarrier, Rectangle field) {
+	if (ballCarrier < 0) return;
 
-// 	Player* carrier = &players[ballCarrier];
+	Player* carrier = &players[ballCarrier];
 
-// }
+	// Determine which try line we're attacking
+    float targetX;
+    if (carrier->team == 0) {
+        targetX = field.x + field.width - 40;
+    } else {
+        targetX = field.x + 40;
+    }
+
+    // Primary direction: toward try line
+    Vector2 primaryDirection = {targetX - carrier->position.x, 0};
+    primaryDirection = Vector2Normalize(primaryDirection);
+
+    // put additional logic in here to avoid defenders, etc
+
+    float speed = 120;
+    carrier->velocity.x = primaryDirection.x * speed;
+    carrier->velocity.y = primaryDirection.y * speed;
+
+}

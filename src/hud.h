@@ -12,5 +12,6 @@
 
 void DrawHUD();
 void DrawPlayerInfo(int playerWithBall, const Player* players);
+void DrawScore(int team1Score, int team2Score);
 
 #endif
