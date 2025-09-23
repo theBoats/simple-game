@@ -60,6 +60,7 @@ static void UpdateNormalPlay(Game* game, float deltaTime) {
 		// Check for scoring
 		if (CheckForTry(game->players, game->ballCarrier, game->field)) {
 				HandleTryScored(game->players, &game->team1score, &game->team2score, game->ballCarrier);
+				ResetGame(game);
 		}
 	}
 }
@@ -136,3 +137,21 @@ void DrawGame(const Game* game) {
 
 	EndDrawing();
 }
+
+
+
+// Other game functions
+// Reset for kickoff
+void ResetGame(Game* game) {
+    game->stateTimer = 0;
+    game->ballCarrier = -1;
+    game->ball.isLoose = true;
+    game->ball.position = (Vector2){400, 300};
+    
+    // Reset all players to starting positions
+    InitializePlayers(game->players);
+}
+
+
+
+

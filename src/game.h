@@ -36,5 +36,6 @@ void InitGame(Game* game);
 void DrawGame(const Game* game);
 void UpdateGame(Game* game, float deltaTime);
 static void UpdateNormalPlay(Game* game, float deltaTime);
+void ResetGame(Game* game);
 
 #endif
